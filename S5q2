@@ -1,0 +1,21 @@
+Q1 array of 50 no
+import pandas as pd 
+import numpy as np
+import matplotlib.pyplot as plt
+x=np.random.randint(low = 1,high=100,size=50)
+y=np.random.randint(low = 1,high=100,size=50)
+print(x)
+print(y)
+plt.scatter(x,y)
+plt.show()
+
+Q2 print shape no of row column
+import pandas as pd
+sal=pd.read_csv("Salary.csv")
+print('The DataFrame is :\n', sal)
+
+#get dataframe shape
+shape = sal.shape
+print('\nDataFrame Shape :', shape)
+print('\nNumber of rows :', shape[0])
+print('\nNumber of columns :', shape[1])

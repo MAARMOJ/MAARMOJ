@@ -1,0 +1,20 @@
+Q1  replacing with salary mean
+import pandas as pd
+sal=pd.read_csv("Salary.csv")
+sal.head()
+sal.mean()
+sal.fillna(sal.mean())
+
+Q2 line plot
+import pandas as pd
+import matplotlib as plt
+lp=pd.read_csv("Salary.csv")
+lp.plot(x="YearsExperience",y="Salary")
+
+Q3 hight and weight dataset
+import matplotlib as plt
+import pandas as pd
+hw=pd.read_csv("weight-height.csv")
+hw.head(10)
+hw.tail(10)
+hw.sample(20)

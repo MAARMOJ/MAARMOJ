@@ -1,0 +1,38 @@
+.1) Design a form to accept string from the user and perform the following 
+operations
+a. To select first 5 words from the string
+b. Convert the given string to lowercase and then to Title case.
+c. Pad the given string with “*” from left and right both the sides. 
+d. Remove the leading whitespaces from the given string. 
+e. Find the reverse of given string. 
+[15]
+----------------------------Code----------------------------------------------
+------------------------------------HTML Code ----------------------
+<html>
+<head>
+<title>Customer information </title>
+</head>
+<body>
+<form method=post action="slip15.php">
+Enter the String : <input type=text name="str"><br><br>
+<input type=submit value="OK">
+</form>
+</body>
+</html>
+
+
+slip No 15) --------------- solution php code----------------------------------------
+<?php
+$str1=$_POST['str'];
+echo "***Finding Substring***<br>";
+$str2=substr($str1,0,5);
+echo "<br>First five characters from string are:".$str2."<br>";
+echo "<br>***Lowercase***"."<br>";
+print("¥n".strtolower($str1));
+echo "<br><br>***Padding***<br>";
+print("¥n".str_pad($str1,15,"-",STR_PAD_BOTH));
+echo "<br><br>***Remove White Spaces<br>";
+print("¥n".rtrim($str1));
+echo "<br><br>***Reverse the String***<br>";
+print("¥n".strrev($str1));
+?>

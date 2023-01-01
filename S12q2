@@ -1,0 +1,30 @@
+Q.2 A) Generate a random array of 50 integers and display them using a 
+line chart, scatter plot, 
+histogram and box plot. Apply appropriate color, labels and styling 
+options. 
+[10]
+Q2 Draw scatter plot line chart for 50 array elements
+----------------------------------------Code--------------------------------------
+import pandas as pd 
+import numpy as np
+import matplotlib.pyplot as plt
+x=np.random.randint(low = 1,high=100,size=50)
+y=np.random.randint(low = 1,high=100,size=50)
+print(x)
+
+print(y)
+plt.scatter(x,y)
+plt.show()
+Q.2 B) Write a Python program to create data frame containing column 
+name, salary, department 
+add 10 rows with some missing and duplicate values to the data frame. 
+Also drop all null and 
+empty values. Print the modified data frame
+Q2 make 10 entries
+------------------------------------Code----------------------------------------------
+import pandas as pd
+header=("name","salary","dept")
+data={('swapnil',20000,'computer'),('shital',30000,'commerce')}
+#make 10 entries with duplicate and null
+df=pd.DataFrame(data=data,columns=header)
+print(df)

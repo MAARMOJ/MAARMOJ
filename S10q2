@@ -1,0 +1,21 @@
+Slip 10	
+Q1 Column wise mean of height weight dataset
+import pandas as pd
+hw=pd.read_csv("weight-height.csv")
+m1=hw["Height"].mean()
+print("Mean Height ",m1)
+m2=hw["Height"].median()
+print("Median Height",m2)
+n1=hw["Weight"].mean()
+print("Mean Weight ",m1)
+n2=hw["Weight"].median()
+print("Median weight",m2)
+
+Q2 Manhattamn Distance(Cityblock distance
+import pandas as pd
+from scipy.spatial.distance import cityblock
+x=(1,2,3,4,5,6)
+y=(2,3,4,5,6,7)
+print(cityblock(x,y))
+
+

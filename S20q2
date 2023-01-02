@@ -1,0 +1,27 @@
+.2 A) Generate a random array of 50 integers and display them using a line 
+chart, scatter plot, 
+histogram and box plot. Apply appropriate color, labels and styling 
+options. 
+[10]
+--------------------------------------Code------------------------------------------
+import pandas as pd 
+import numpy as np
+import matplotlib.pyplot as plt
+x=np.random.randint(low = 1,high=100,size=50)
+y=np.random.randint(low = 1,high=100,size=50)
+print(x)
+print(y)
+plt.scatter(x,y)
+
+plt.show()
+------------------------------------------------------------------------------------------------
+.2 B) Add two outliers to the above data and display the box plot
+--------------------------------------Code------------------------------------------
+showfliers=False
+.boxplot()
+vert=False
+df.apply
+df_toocool=df[df['Column']<68]
+'Column'
+df_OutOfRange=df[df['Column']<68, df['Column']>72]
+df_OutOfRange=df[(df['Column']<68) & (df['Column']>72)]

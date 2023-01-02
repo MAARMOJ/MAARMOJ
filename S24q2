@@ -1,0 +1,31 @@
+.2 A) Import dataset “iris.csv”. Write a Python program to create a Bar plot 
+to get the 
+frequency of the three species of the Iris data. 
+[10]
+--------------------------------------Code------------------------------------------
+import pandas as pd
+import matplotlib.pyplot as plt
+iris = pd.read_csv("iris.csv")
+ax=plt.subplots(1,1,figsize=(10,8))
+iris['Species'].value_counts().plot.pie(explode=[0.1,0.1,0.1],autopct='%1.1f
+%%',shadow=True,figsize=(10,8))
+plt.title("Iris Species %")
+plt.show()
+.2 B) Write a Python program to create a histogram of the three species of 
+the Iris data. 
+[5]
+--------------------------------------Code------------------------------------------
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy.stats import norm
+import pandas as pd
+sns.set()
+iris = sns.load_dataset('iris')
+# make the 'species' column categorical to fix the order
+iris['species'] = pd.Categorical(iris['species'])
+fig, axs = plt.subplots(2, 2, figsize=(12, 6))
+for col, ax in zip(iris.columns[:4], axs.flat):
+ sns.histplot(data=iris, x=col, kde=True, hue='species', 
+common_norm=False, legend=ax==axs[0,0], ax=ax)
+plt.tight_layout()
+plt.show()

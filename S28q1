@@ -1,0 +1,50 @@
+Q.1) Write a program to read a flat file “student.dat”, calculate the 
+percentage and display the 
+data from file in tabular format.(Student.dat file contains rollno, name, 
+OS, WT, DS, Python,
+Java, CN )
+--------------------------------------Code------------------------------------------
+Slip No 28 solution code slip28.php
+<html><body>
+<form method=post action="slip28.php">
+<b><h1>------------STUDENT DETAILS-------------</h1></b><br>
+Enter File name:<input type=text name="str1"/><br>
+<input type=submit name="SUBMIT">
+<input type=reset name="RESET"><br>
+</form>
+</body>
+</html>
+<?php
+$file1=$_POST['str1'];
+$data=file($file1);
+$name=$data[0];
+$age=$data[1];
+$std=$data[2];
+$eid=$data[3];
+$m1=$data[4];
+$m2=$data[4];
+$m3=$data[4];
+$m4=$data[4];
+$m5=$data[4];
+$m6=$data[4];
+$total=$m1+$m2+$m3+$m4+$m5+$m6;
+$per=$total/6;
+$arr=array("Name:"=>$name,"Age:"=>$age,"Course"=>$std,"Email_id"=>$e
+id,"Total"=>$total,"Percentage"=>$per);
+echo '<table border="1" >';
+foreach($arr as $k=>$v)
+{
+Echo'<tr><td>'.$k.'</td><td>'.$v.'</td></tr>';
+}
+?>
+Slip28stud.data
+sandeep HETRAM AMBULE 
+20 
+Bsc(comp.sci)
+sandyambule@gmail.com 
+80
+88
+90
+78
+82
+79

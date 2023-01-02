@@ -1,0 +1,38 @@
+slip No 30--------------------------------------
+Q.1) Consider the following entities and their relationships [15]
+Student (Stud_id,name,class) 
+Competition (c_no,c_name,type) 
+Relationship between student and competition is many-many with 
+attribute rank and year. Create 
+a RDB in 3NF for the above and solve the following. Using above database 
+write a script in PHP 
+to accept a competition name from user and display information of 
+student who has secured 1st 
+rank in that competition.
+--------------------------------------Code------------------------------------------
+<html>
+<body bgcolor="pink">
+<form method="post" action="slip30.php">
+Enter compitition name<input type="text" name="t1">
+<br><input type="submit" value="submit">
+</form>
+</body>
+</html>
+slip No 30) solution php code
+<?php
+$cname=$_POST['t1'];
+echo"Cname".$cname;
+$con=pg_connect("dbname=college user=postgres");
+echo "Connected to database";
+$q="select sname,class from student1,comp,s_c where student1.sid=s_c.sid 
+and s_c.cno=comp.cno and comp.cname='$cname'and rank=1";
+$rs=pg_query($q) or die("error");
+echo "Compitition Name:$cname<br>";
+echo "<table border=1>";
+echo "<tr><th>Student Name</th><th>class</th></tr>";
+while($row=pg_fetch_row($rs))
+{
+echo "<tr><td>$row[0]</td><td>$row[1]</td></tr>";
+}
+
+?>

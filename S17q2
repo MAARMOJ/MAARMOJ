@@ -1,0 +1,36 @@
+Q.2 A) Write a Python program to draw scatter plots to compare two 
+features of the iris dataset 
+[10]
+--------------------------------------Code------------------------------------------
+from sklearn.datasets import load_iris
+import matplotlib.pyplot as plt
+iris = load_iris()
+def plot_iris(f1, f2):
+ n_samples = len(iris.target)
+ for t in set(iris.target):
+ x = [iris.data[i,f1] for i in range(n_samples) if iris.target[i]==t]
+ y = [iris.data[i,f2] for i in range(n_samples) if iris.target[i]==t]
+ plt.scatter(x,
+ y,
+ color=['red', 'green', 'blue'][t],
+ label=iris.target_names[t])
+ plt.xlabel(iris.feature_names[f1])
+ plt.ylabel(iris.feature_names[f2])
+ plt.title('Iris Dataset')
+ plt.legend(iris.target_names, loc='lower right')
+plt.show()
+n_features = len(iris.feature_names)
+pairs = [(i, j) for i in range(n_features) for j in range(i+1, n_features)]
+for (f1, f2) in pairs:
+ plot_iris(f1, f2)
+Q.2 B) Write a Python program to create a data frame containing columns 
+name, age , salary, 
+department . Add 10 rows to the data frame. View the data frame. 
+[5]
+--------------------------------------Code------------------------------------------
+import pandas as pd
+header=("name","per","age")
+data={('swapnil',26,10,000),('shital',30,12,000)}
+#make 10 
+df=pd.DataFrame(data=data,columns=header)
+m1=df[‘per’].mean()

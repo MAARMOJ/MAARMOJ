@@ -1,0 +1,27 @@
+.2 A) Generate a random array of 50 integers and display them using a line 
+chart, scatter plot, 
+histogram and box plot. Apply appropriate color, labels and styling 
+options. 
+[10]
+--------------------------------------Code------------------------------------------
+import pandas as pd 
+import numpy as np
+import matplotlib.pyplot as plt
+x=np.random.randint(low = 1,high=100,size=50)
+y=np.random.randint(low = 1,high=100,size=50)
+print(x)
+print(y)
+plt.scatter(x,y)
+plt.show()
+Q.2 B) Create two lists, one representing subject names and the other 
+representing marks 
+obtained in those subjects. Display the data in a pie chart. 
+[5]
+--------------------------------------Code------------------------------------------
+from matplotlib import pyplot as plt
+import numpy as np
+subject = ['OS', 'FDS', 'JAVA','PHP', 'BlockChain', 'python']
+data = [23, 17, 35, 29, 12, 41]
+fig = plt.figure(figsize =(10, 7))
+plt.pie(data, labels = subject)
+plt.show()
